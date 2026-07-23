@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Asesoría en marketing y comunicación digital para emprendedores de servicios.">
+  <title>1UP | Marketing y Comunicación Digital</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="nav-wrap">
+    <nav class="nav container">
+      <a class="logo" href="#inicio" aria-label="Ir al inicio">
+        <span class="logo-a">1</span><span class="logo-m">UP</span>
+      </a>
+
+      <div class="nav-menu">
+        <a class="nav-link" href="#inicio">Inicio</a>
+        <a class="nav-link" href="#sobre-mi">Sobre mí</a>
+        <a class="nav-link" href="#servicios">Servicios</a>
+        <a class="nav-link" href="#metodo">Método</a>
+        <a class="nav-link" href="#contacto">Contacto</a>
+        <a class="nav-link" href="blog.html">Blog</a>
+      </div>
+    </nav>
+  </div>
+
+  <header id="inicio" class="hero">
+    <main class="hero-content container">
+      <p class="eyebrow">Marketing y comunicación para emprendedores de servicios</p>
+      <h1>Tu servicio tiene valor.<br>Tu comunicación debe hacerlo evidente.</h1>
+      <p class="hero-text">
+        Soy <strong>Alejandra Merlo</strong>, asesora en marketing y comunicación digital.
+        Te ayudo a ordenar tu mensaje, contenido y presencia online para atraer
+        a los clientes correctos.
+      </p>
+
+      <div class="hero-actions">
+        <a class="button button-primary" href="#contacto">Iniciar misión</a>
+        <a class="button button-secondary" href="#servicios">Ver servicios</a>
+      </div>
+
+      <div class="pixel-progress" aria-label="Progreso decorativo">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </main>
+  </header>
+
+  <section id="sobre-mi" class="section section-light">
+    <div class="container two-columns">
+      <div>
+        <p class="eyebrow">Nivel 01 · Sobre mí</p>
+        <h2>Comunicación clara para negocios que quieren avanzar.</h2>
+      </div>
+
+      <div>
+        <p>
+          Soy <strong>Alejandra Merlo</strong>. Acompaño a emprendedores de servicios
+          que tienen mucho que aportar, pero sienten que su comunicación aún no
+          refleja el valor real de su trabajo.
+        </p>
+
+        <p>
+          En 1UP combinamos estrategia, contenido y comunicación práctica:
+          menos acciones al azar y más decisiones que puedas sostener mientras
+          haces crecer tu negocio.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicios" class="section section-dark">
+    <div class="container" >
+      <p class="eyebrow" style="font-size: 1.1rem;">Nivel 02 · Servicios </p>
+      <h2>Elige el siguiente paso para tu negocio.</h2>
+
+      <div class="service-grid">
+        <article class="service-card">
+          <span class="level">01</span>
+          <h3>Sesión <bdo dir="ltr"></bdo>brújula</h3>
+          <p>
+            Si recién empiezas con tu negocio y no sabes qué comunicar, esta sesión te ayudará a enfocarte y saber qué rumbo tomar.
+          </p>
+          <a href="#contacto">Quiero mi sesión →</a>
+        </article>
+
+        <article class="service-card featured">
+          <span class="level">02</span>
+          <h3>Marca que conecta</h3>
+          <p>
+            Ya tienes tu marca, tus canales y tu mensaje, pero necesitas integrarlos en una estrategia coherente.
+          </p>
+          <a href="#contacto">Quiero mi marca →</a>
+        </article>
+
+        <article class="service-card">
+          <span class="level">03</span>
+          <h3>Acompañamiento</h3>
+          <p>
+            Revisión y dirección mensual para implementar tu estrategia con
+            continuidad.
+          </p>
+          <a href="#contacto">Quiero acompañamiento →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="metodo" class="section section-light">
+    <div class="container">
+      <p class="eyebrow">Nivel 03 · Método VISIBLE</p>
+      <h2>Una ruta para dejar de improvisar.</h2>
+
+      <div class="method-grid">
+        <div><strong>V</strong><span>Ver tu punto de partida</span></div>
+        <div><strong>I</strong><span>Identificar tu diferencial</span></div>
+        <div><strong>S</strong><span>Simplificar tu mensaje</span></div>
+        <div><strong>I</strong><span>Integrar estrategia y contenido</span></div>
+        <div><strong>B</strong><span>Buscar conversaciones</span></div>
+        <div><strong>L</strong><span>Leer resultados</span></div>
+        <div><strong>E</strong><span>Evolucionar con foco</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="section contact-section">
+    <div class="container contact-content">
+      <p class="eyebrow">Misión disponible</p>
+      <h2>¿Tu servicio merece una comunicación más clara?</h2>
+      <p>
+        Completa el formulario con tus datos y te responderé a la brevedad.
+      </p>
+
+      <form class="contact-form" action="mailto:alejandra.merlo.myp@gmail.com" method="post" enctype="text/plain">
+        <div class="form-grid">
+          <label>
+            Nombre y apellido
+            <input type="text" name="Nombre" required>
+          </label>  
+          <label>
+            E-mail de contacto
+            <input type="email" name="Email" required>
+          </label>
+          <label class="full-width">
+            Mensaje
+            <textarea name="Mensaje" rows="6" required></textarea>
+          </label>
+        </div>
+
+        <button class="button button-primary form-button" type="submit">Enviar mensaje</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>© <span id="year"></span> 1UP · Marketing y Comunicación Digital</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
