@@ -433,4 +433,24 @@ footer p {
   .service-card {
     min-height: auto;
   }
+
+  .form-status {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  display: none;
+}
+
+.form-status.success {
+  display: block;
+  background: #eaf7ee;
+  color: #1f6b3b;
+}
+
+.form-status.error {
+  display: block;
+  background: #fdecec;
+  color: #a12626;
+}
 }
