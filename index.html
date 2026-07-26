@@ -5,10 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Asesoría en marketing y comunicación digital para emprendedores de servicios.">
   <title>1UP | Marketing y Comunicación Digital</title>
-
-  <link rel="alternate" hreflang="es" href="https://alem7486.github.io/1up/">
-  <link rel="alternate" hreflang="en" href="https://alem7486.github.io//en/">
-
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -25,10 +21,6 @@
         <a class="nav-link" href="#metodo">Método</a>
         <a class="nav-link" href="#contacto">Contacto</a>
         <a class="nav-link" href="blog.html">Blog</a>
-        <div class="lang-switch" aria-label="Selector de idioma">
-          <a class="nav-link active-lang" href="index.html" aria-current="page">ES</a>
-          <a class="nav-link" href="en/index.html">EN</a>
-        </div>
       </div>
     </nav>
   </div>
@@ -67,7 +59,7 @@
 
       <div>
         <p>
-          Somos <strong>1UP</strong> agencia creativa. Acompañamos a emprendedores de servicios
+          Somos <strong>1UP</strong>, agencia creativa. Acompañamos a emprendedores de servicios
           que tienen mucho que aportar, pero sienten que su comunicación aún no
           refleja el valor real de su trabajo.
         </p>
@@ -135,7 +127,7 @@
         Completa el formulario con tus datos y te responderemos a la brevedad.
       </p>
 
-      <form id="contact-form" class="contact-form" action="https://formspree.io/f/mjgnakln" method="POST">
+      <form id="contact-form" class="contact-form">
         <div class="form-grid">
           <label for="nombre">NOMBRE Y APELLIDO</label>
           <input id="nombre" type="text" name="Nombre" required>
@@ -144,7 +136,7 @@
           <input id="email" type="email" name="Email" required>
 
           <label for="mensaje">MENSAJE</label>
-          <textarea id="mensaje" name="MENSAJE" rows="6" required></textarea>
+          <textarea id="mensaje" name="Mensaje" rows="6" required></textarea>
         </div>
 
         <button id="form-button" class="button button-primary form-button" type="submit">
@@ -159,49 +151,6 @@
   <footer>
     <p>© <span id="year"></span> 1UP · Marketing y Comunicación Digital</p>
   </footer>
-
-  <script>
-    const form = document.getElementById("contact-form");
-    const button = document.getElementById("form-button");
-    const status = document.getElementById("form-status");
-
-    if (form) {
-      form.addEventListener("submit", async function (event) {
-        event.preventDefault();
-
-        const data = new FormData(form);
-        button.disabled = true;
-        button.textContent = "Enviando...";
-        status.className = "form-status";
-        status.textContent = "";
-
-        try {
-          const response = await fetch(form.action, {
-            method: "POST",
-            body: data,
-            headers: {
-              "Accept": "application/json"
-            }
-          });
-
-          if (response.ok) {
-            form.reset();
-            status.className = "form-status success";
-            status.textContent = "Gracias por tu mensaje. Te responderé pronto.";
-          } else {
-            status.className = "form-status error";
-            status.textContent = "No se pudo enviar el mensaje. Intenta nuevamente.";
-          }
-        } catch (error) {
-          status.className = "form-status error";
-          status.textContent = "Hubo un problema de conexión. Intenta nuevamente.";
-        }
-
-        button.disabled = false;
-        button.textContent = "Enviar mensaje";
-      });
-    }
-  </script>
 
   <script src="script.js"></script>
 </body>

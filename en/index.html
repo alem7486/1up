@@ -5,11 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Marketing and digital communication consulting for service-based entrepreneurs.">
   <title>1UP | Marketing and Digital Communication</title>
-
-  <link rel="alternate" hreflang="es" href="https://alem7486.github.io/1up/">
-  <link rel="alternate" hreflang="en" href="https://alem7486.github.io/1up/en/">
-
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="nav-wrap">
@@ -24,11 +20,7 @@
         <a class="nav-link" href="#services">Services</a>
         <a class="nav-link" href="#method">Method</a>
         <a class="nav-link" href="#contact">Contact</a>
-        <a class="nav-link" href="../blog.html">Blog</a>
-        <div class="lang-switch" aria-label="Language switcher">
-          <a class="nav-link" href="../index.html">ES</a>
-          <a class="nav-link active-lang" href="index.html" aria-current="page">EN</a>
-        </div>
+        <a class="nav-link" href="blog.html">Blog</a>
       </div>
     </nav>
   </div>
@@ -39,7 +31,7 @@
       <h1>Your service has value. Your communication should make it clear.</h1>
       <p class="hero-text">
         I’m <strong>Alejandra Merlo</strong>, a marketing and digital communication consultant.
-        I help you clarify your message, content, and online presence so you can attract the right clients.
+        I help you bring clarity to your message, content, and online presence so you can attract the right clients.
       </p>
 
       <div class="hero-actions">
@@ -89,7 +81,7 @@
           <span class="level">01</span>
           <h3>Consulting</h3>
           <p>
-            If you are just starting your business or already have one but are unsure what to communicate,
+            If you are just starting your business, or if you already have one but are unsure what to communicate,
             this session will help you focus and define the right direction.
           </p>
           <a href="#contact">I want my session →</a>
@@ -115,11 +107,11 @@
 
       <div class="method-grid">
         <div><strong>V</strong><span>View your starting point</span></div>
-        <div><strong>I</strong><span>Identify your differentiator</span></div>
+        <div><strong>I</strong><span>Identify what makes you different</span></div>
         <div><strong>S</strong><span>Simplify your message</span></div>
         <div><strong>I</strong><span>Integrate strategy and content</span></div>
-        <div><strong>B</strong><span>Build conversations</span></div>
-        <div><strong>L</strong><span>Learn from results</span></div>
+        <div><strong>B</strong><span>Build meaningful conversations</span></div>
+        <div><strong>L</strong><span>Look at the results</span></div>
         <div><strong>E</strong><span>Evolve with focus</span></div>
       </div>
     </div>
@@ -133,7 +125,7 @@
         Fill out the form with your details and we will get back to you shortly.
       </p>
 
-      <form id="contact-form" class="contact-form" action="https://formspree.io/f/mjgnakln" method="POST">
+      <form id="contact-form" class="contact-form">
         <div class="form-grid">
           <label for="name">FULL NAME</label>
           <input id="name" type="text" name="Name" required>
@@ -158,49 +150,6 @@
     <p>© <span id="year"></span> 1UP · Marketing and Digital Communication</p>
   </footer>
 
-  <script>
-    const form = document.getElementById("contact-form");
-    const button = document.getElementById("form-button");
-    const status = document.getElementById("form-status");
-
-    if (form) {
-      form.addEventListener("submit", async function (event) {
-        event.preventDefault();
-
-        const data = new FormData(form);
-        button.disabled = true;
-        button.textContent = "Sending...";
-        status.className = "form-status";
-        status.textContent = "";
-
-        try {
-          const response = await fetch(form.action, {
-            method: "POST",
-            body: data,
-            headers: {
-              "Accept": "application/json"
-            }
-          });
-
-          if (response.ok) {
-            form.reset();
-            status.className = "form-status success";
-            status.textContent = "Thanks for your message. I’ll get back to you soon.";
-          } else {
-            status.className = "form-status error";
-            status.textContent = "Your message could not be sent. Please try again.";
-          }
-        } catch (error) {
-          status.className = "form-status error";
-          status.textContent = "There was a connection problem. Please try again.";
-        }
-
-        button.disabled = false;
-        button.textContent = "Send message";
-      });
-    }
-  </script>
-
-  <script src="../script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
