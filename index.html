@@ -5,13 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Asesoría en marketing y comunicación digital para emprendedores de servicios.">
   <title>1UP | Marketing y Comunicación Digital</title>
+
+  <link rel="alternate" hreflang="es" href="https://alem7486.github.io/1up/">
+  <link rel="alternate" hreflang="en" href="https://alem7486.github.io//en/">
+
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="nav-wrap">
     <nav class="nav container">
       <a class="logo" href="#inicio" aria-label="Ir al inicio">
-        <span class="logo-a">1</span><span class="logo-m">UP</span>
+        <span class="logo-a">1 </span><span></span><span class="logo-m">U P</span>
       </a>
 
       <div class="nav-menu">
@@ -21,6 +25,10 @@
         <a class="nav-link" href="#metodo">Método</a>
         <a class="nav-link" href="#contacto">Contacto</a>
         <a class="nav-link" href="blog.html">Blog</a>
+        <div class="lang-switch" aria-label="Selector de idioma">
+          <a class="nav-link active-lang" href="index.html" aria-current="page">ES</a>
+          <a class="nav-link" href="en/index.html">EN</a>
+        </div>
       </div>
     </nav>
   </div>
@@ -28,7 +36,7 @@
   <header id="inicio" class="hero">
     <main class="hero-content container">
       <p class="eyebrow">Marketing y comunicación para emprendedores de servicios</p>
-      <h1>Tu servicio tiene valor.<br>Tu comunicación debe hacerlo evidente.</h1>
+      <h1>Tu servicio tiene valor. Tu comunicación debe hacerlo evidente.</h1>
       <p class="hero-text">
         Soy <strong>Alejandra Merlo</strong>, asesora en marketing y comunicación digital.
         Te ayudo a ordenar tu mensaje, contenido y presencia online para atraer
@@ -59,7 +67,7 @@
 
       <div>
         <p>
-          Soy <strong>Alejandra Merlo</strong>. Acompaño a emprendedores de servicios
+          Somos <strong>1UP</strong> agencia creativa. Acompañamos a emprendedores de servicios
           que tienen mucho que aportar, pero sienten que su comunicación aún no
           refleja el valor real de su trabajo.
         </p>
@@ -74,16 +82,17 @@
   </section>
 
   <section id="servicios" class="section section-dark">
-    <div class="container" >
-      <p class="eyebrow" style="font-size: 1.1rem;">Nivel 02 · Servicios </p>
+    <div class="container">
+      <p class="eyebrow" style="font-size: 1.1rem;">Nivel 02 · Servicios</p>
       <h2>Elige el siguiente paso para tu negocio.</h2>
 
       <div class="service-grid">
         <article class="service-card">
           <span class="level">01</span>
-          <h3>Sesión <bdo dir="ltr"></bdo>brújula</h3>
+          <h3>Consultoría</h3>
           <p>
-            Si recién empiezas con tu negocio y no sabes qué comunicar, esta sesión te ayudará a enfocarte y saber qué rumbo tomar.
+            Si recién empiezas con tu negocio o ya tienes uno pero no sabes qué comunicar,
+            esta sesión te ayudará a enfocarte y saber qué rumbo tomar.
           </p>
           <a href="#contacto">Quiero mi sesión →</a>
         </article>
@@ -92,19 +101,10 @@
           <span class="level">02</span>
           <h3>Marca que conecta</h3>
           <p>
-            Ya tienes tu marca, tus canales y tu mensaje, pero necesitas integrarlos en una estrategia coherente.
+            Tomamos las riendas de tus redes para que estés tranquila/o y tu comunicación sea consistente.
+            Incluye estrategia, contenido y diseño.
           </p>
           <a href="#contacto">Quiero mi marca →</a>
-        </article>
-
-        <article class="service-card">
-          <span class="level">03</span>
-          <h3>Acompañamiento</h3>
-          <p>
-            Revisión y dirección mensual para implementar tu estrategia con
-            continuidad.
-          </p>
-          <a href="#contacto">Quiero acompañamiento →</a>
         </article>
       </div>
     </div>
@@ -132,27 +132,26 @@
       <p class="eyebrow">Misión disponible</p>
       <h2>¿Tu servicio merece una comunicación más clara?</h2>
       <p>
-        Completa el formulario con tus datos y te responderé a la brevedad.
+        Completa el formulario con tus datos y te responderemos a la brevedad.
       </p>
-</script>
-      <form class="contact-form"  action="https://formspree.io/f/mjgnakln" method="POST"
+
+      <form id="contact-form" class="contact-form" action="https://formspree.io/f/mjgnakln" method="POST">
         <div class="form-grid">
-          <label>
-            NOMBRE Y APELLIDO
-            <input type="text" name="Nombre" required>
-          </label> <br
-          <label>
-            E-MAIL DE CONTACTO
-            <input type="email" name="Email" required>
-          </label> <br> <br>
-          <label>
-            MENSAJE
-            <textarea name="MENSAJE" rows="6" required></textarea>
-          </label>
+          <label for="nombre">NOMBRE Y APELLIDO</label>
+          <input id="nombre" type="text" name="Nombre" required>
+
+          <label for="email">E-MAIL DE CONTACTO</label>
+          <input id="email" type="email" name="Email" required>
+
+          <label for="mensaje">MENSAJE</label>
+          <textarea id="mensaje" name="MENSAJE" rows="6" required></textarea>
         </div>
 
-        <button class="button button-primary form-button" type="submit">Enviar mensaje</button>
-         <p id="form-status" class="form-status" aria-live="polite"></p>
+        <button id="form-button" class="button button-primary form-button" type="submit">
+          Enviar mensaje
+        </button>
+
+        <p id="form-status" class="form-status" aria-live="polite"></p>
       </form>
     </div>
   </section>
@@ -162,43 +161,47 @@
   </footer>
 
   <script>
-  const form = document.getElementById("contact-form");
-  const status = document.getElementById("form-status");
+    const form = document.getElementById("contact-form");
+    const button = document.getElementById("form-button");
+    const status = document.getElementById("form-status");
 
-  form.addEventListener("submit", async function (event) {
-    event.preventDefault();
+    if (form) {
+      form.addEventListener("submit", async function (event) {
+        event.preventDefault();
 
-    status.style.display = "none";
-    status.textContent = "";
+        const data = new FormData(form);
+        button.disabled = true;
+        button.textContent = "Enviando...";
+        status.className = "form-status";
+        status.textContent = "";
 
-    const data = new FormData(form);
+        try {
+          const response = await fetch(form.action, {
+            method: "POST",
+            body: data,
+            headers: {
+              "Accept": "application/json"
+            }
+          });
 
-    try {
-      const response = await fetch(form.action, {
-        method: "POST",
-        body: data,
-        headers: {
-          "Accept": "application/json"
+          if (response.ok) {
+            form.reset();
+            status.className = "form-status success";
+            status.textContent = "Gracias por tu mensaje. Te responderé pronto.";
+          } else {
+            status.className = "form-status error";
+            status.textContent = "No se pudo enviar el mensaje. Intenta nuevamente.";
+          }
+        } catch (error) {
+          status.className = "form-status error";
+          status.textContent = "Hubo un problema de conexión. Intenta nuevamente.";
         }
-      });
 
-      if (response.ok) {
-        status.textContent = "Gracias por tu mensaje. Te responderé pronto.";
-        status.style.display = "block";
-        status.style.color = "green";
-        form.reset();
-      } else {
-        status.textContent = "No se pudo enviar el formulario. Intenta nuevamente.";
-        status.style.display = "block";
-        status.style.color = "red";
-      }
-    } catch (error) {
-      status.textContent = "Hubo un problema de conexión. Intenta nuevamente.";
-      status.style.display = "block";
-      status.style.color = "red";
+        button.disabled = false;
+        button.textContent = "Enviar mensaje";
+      });
     }
-  });
-</script>
+  </script>
 
   <script src="script.js"></script>
 </body>

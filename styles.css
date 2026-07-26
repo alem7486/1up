@@ -45,7 +45,7 @@ h3 {
 }
 
 h1 {
-  max-width: 850px;
+  max-width: 950px;
   font-size: clamp(2.7rem, 7vw, 5.8rem);
   letter-spacing: -0.06em;
 }
@@ -132,7 +132,7 @@ a {
   font-family: "DM Mono", monospace;
   font-size: 2rem;
   font-weight: 500;
-  letter-spacing: -0.28em;
+  letter-spacing: -0.25em;
   text-shadow: 3px 3px 0 var(--coral);
 }
 
