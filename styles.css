@@ -447,33 +447,58 @@ footer p {
   background: #eaf7ee;
   color: #1f6b3b;
 }
+.form-status {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  display: none;
+}
+
+.form-status.success {
+  display: block;
+  background: #eaf7ee;
+  color: #1f6b3b;
+}
 
 .form-status.error {
   display: block;
   background: #fdecec;
   color: #a12626;
+}
 
-  .lang-switch {
+.lang-switch {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  flex-shrink: 0;
+  margin-left: auto;
 }
 
 .lang-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 0.7rem;
   text-decoration: none;
-  color: inherit;
+  color: var(--white);
   font-size: 0.95rem;
-  opacity: 0.7;
-  transition: opacity 0.2s ease;
+  font-family: "DM Mono", monospace;
+  border: 2px solid var(--yellow);
+  background: transparent;
+  opacity: 0.85;
 }
 
 .lang-link:hover {
   opacity: 1;
+  color: var(--yellow);
 }
 
 .lang-link.active {
   opacity: 1;
   font-weight: 700;
-}
-}
+  background: var(--yellow);
+  color: var(--navy);
 }
