@@ -8,11 +8,24 @@ dotenv.config();
 
 const app = express();
 
-const allowedOrigin = process.env.ALLOWED_ORIGIN;
+const allowedOrigins = [
+  "https://alem7486.github.io",
+  "http://localhost:5500",
+  "http://127.0.0.1:5500"
+];
 
-app.use(cors({
-  origin: allowedOrigin
-}));
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  }
+};
+
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
 
 app.use(express.json());
 
@@ -21,9 +34,7 @@ const contactLimiter = rateLimit({
   limit: 5,
   standardHeaders: true,
   legacyHeaders: false,
-  message: {
-    error: "Too many submissions. Please try again later."
-  }
+  message: { error: "Too many submissions. Please try again later." }
 });
 
 app.get("/", (req, res) => {
@@ -34,23 +45,16 @@ app.post("/contact", contactLimiter, async (req, res) => {
   const { name, email, message, lang } = req.body;
 
   if (!name || !email || !message) {
-    return res.status(400).json({
-      error: "Missing required fields."
-    });
+    return res.status(400).json({ error: "Missing required fields." });
   }
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
   if (!emailRegex.test(email)) {
-    return res.status(400).json({
-      error: "Invalid email."
-    });
+    return res.status(400).json({ error: "Invalid email." });
   }
 
   if (name.length > 120 || email.length > 160 || message.length > 3000) {
-    return res.status(400).json({
-      error: "Input is too long."
-    });
+    return res.status(400).json({ error: "Input is too long." });
   }
 
   try {
@@ -66,9 +70,7 @@ app.post("/contact", contactLimiter, async (req, res) => {
     });
   } catch (error) {
     console.error("Database error:", error);
-    return res.status(500).json({
-      error: "Server error."
-    });
+    return res.status(500).json({ error: "Server error." });
   }
 });
 
