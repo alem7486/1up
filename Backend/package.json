@@ -1,0 +1,17 @@
+{
+  "name": "1up-backend",
+  "version": "1.0.0",
+  "description": "Backend for 1UP contact form",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "express-rate-limit": "^8.1.0",
+    "pg": "^8.12.0"
+  }
+}
