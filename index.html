@@ -11,6 +11,56 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
+  <!--muñeco-->
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="pixel-hero" viewBox="0 0 14 14">
+  <rect x="4" y="0" width="6" height="1" style="fill:var(--hero-cap)"/>
+  <rect x="3" y="1" width="8" height="1" style="fill:var(--hero-cap)"/>
+  <rect x="0" y="2" width="3" height="1" style="fill:var(--hero-brim)"/>
+  <rect x="3" y="2" width="7" height="1" style="fill:var(--hero-cap)"/>
+  <rect x="3" y="3" width="2" height="1" style="fill:var(--hero-hair)"/>
+  <rect x="5" y="3" width="5" height="1" style="fill:var(--hero-skin)"/>
+  <rect x="3" y="4" width="1" height="1" style="fill:var(--hero-hair)"/>
+  <rect x="4" y="4" width="6" height="1" style="fill:var(--hero-skin)"/>
+  <rect x="8" y="4" width="1" height="1" style="fill:var(--hero-eye)"/>
+  <rect x="4" y="5" width="5" height="1" style="fill:var(--hero-skin)"/>
+  <rect x="3" y="6" width="7" height="1" style="fill:var(--hero-shirt)"/>
+  <rect x="1" y="7" width="1" height="1" style="fill:var(--hero-skin)"/>
+  <rect x="2" y="7" width="9" height="1" style="fill:var(--hero-shirt)"/>
+  <rect x="11" y="7" width="1" height="1" style="fill:var(--hero-skin)"/>
+  <rect x="3" y="8" width="7" height="1" style="fill:var(--hero-shirt)"/>
+  <rect x="3" y="9" width="7" height="1" style="fill:var(--hero-pants)"/>
+  <rect x="3" y="10" width="3" height="1" style="fill:var(--hero-pants)"/>
+  <rect x="7" y="10" width="3" height="1" style="fill:var(--hero-pants)"/>
+  <rect x="2" y="11" width="4" height="1" style="fill:var(--hero-shoes)"/>
+  <rect x="7" y="11" width="4" height="1" style="fill:var(--hero-shoes)"/>
+  <rect x="0" y="11" width="1" height="1" style="fill:var(--hero-deck)"/>
+  <rect x="13" y="11" width="1" height="1" style="fill:var(--hero-deck)"/>
+  <rect x="0" y="12" width="14" height="1" style="fill:var(--hero-deck)"/>
+  <rect x="2" y="13" width="2" height="1" style="fill:var(--hero-wheel)"/>
+  <rect x="10" y="13" width="2" height="1" style="fill:var(--hero-wheel)"/>
+</symbol>
+</svg>
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-track">
+    <div class="loader-fill" id="loader-fill"></div>
+    <div class="loader-hero" id="loader-hero">
+      <svg class="pixel-sprite" viewBox="0 0 12 12" shape-rendering="crispEdges"><use href="#pixel-hero"/></svg>
+    </div>
+  </div>
+  <p>CARGANDO NIVEL 01 · <span id="loader-pct">0</span>%</p>
+</div>
+
+<div class="scroll-progress" aria-hidden="true">
+  <div class="scroll-fill" id="scroll-fill"></div>
+  <div class="scroll-hero" id="scroll-hero">
+    <svg class="pixel-sprite" viewBox="0 0 12 12" shape-rendering="crispEdges"><use href="#pixel-hero"/></svg>
+  </div>
+</div>
+
   <header class="site-header">
     <nav class="nav container" aria-label="Navegación principal">
       <a class="logo" href="#inicio" aria-label="1UP, volver al inicio">1<span>UP</span></a>
@@ -24,26 +74,38 @@
 
   <main>
     <section class="hero" id="inicio">
-      <div class="hero-orb orb-one"></div><div class="hero-orb orb-two"></div>
+      
       <div class="container hero-grid">
         <div class="hero-copy reveal">
-          <p class="eyebrow light"><span class="status-dot"></span> Estudio de comunicación para servicios</p>
-          <h1>Tu negocio ya creció.<br><em>Tu comunicación</em> también debería hacerlo.</h1>
-          <p class="lead">En 1UP transformamos ideas dispersas en una marca clara, contenido útil y una estrategia que puedes sostener mientras haces crecer tu negocio.</p>
-          <div class="hero-actions"><a class="button primary" href="#contacto">Iniciar misión <span>→</span></a><a class="text-link light" href="#servicios">Explorar niveles <span>↓</span></a></div>
+          <p class="eyebrow light"><span class="status-dot"></span>Marketing y comunicación para emprendedores y pymes</p>
+          <h1>Siempre hay una chance de  <span class="accent">subir de nivel.</span></h1>
+          <p class="lead">En 1UP ordenamos tu mensaje, tu contenido y tu estrategia para que tu comunicación por fin se vea tan profesional como tu trabajo.</p>
+          <div class="hero-actions"><a class="button primary" href="#nivel1">Explorar niveles <span>↓</span></a></div>
         </div>
         <aside class="mission-card reveal" aria-label="Estado de tu misión">
           <div class="card-top"><span>PLAYER 01</span><span>ONLINE</span></div>
-          <div class="pixel-face" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <svg class="pixel-sprite big" viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true"><use href="#pixel-hero"/></svg>
           <p class="mono">MISIÓN ACTIVA</p><h2>Comunicar tu valor sin improvisar.</h2>
           <div class="xp"><div><span>XP DE CLARIDAD</span><strong>72%</strong></div><span class="bar"><b></b></span></div>
           <p class="card-note">Estrategia + contenido + acompañamiento</p>
         </aside>
       </div>
+      <div class="hud container">
+  <div><span>Jugador</span><strong>Tu marca</strong></div>
+  <div><span>Vidas</span><strong class="lives">♥ ♥ ♥</strong></div>
+  <div><span>Score</span><strong id="score">000000</strong></div>
+</div>
       <div class="scroll-note container"><span></span> BAJA PARA DESCUBRIR TU SIGUIENTE NIVEL</div>
     </section>
 
-    <section class="intro section" id="sobre-mi">
+    <div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>ESTRATEGIA ✦ CONTENIDO ✦ DISEÑO ✦ REDES ✦ ASESORÍA ✦ MENSAJE CLARO ✦ PRESENCIA ONLINE ✦ ESTRATEGIA ✦ CONTENIDO ✦ DISEÑO ✦ REDES ✦ ASESORÍA ✦ MENSAJE CLARO ✦ PRESENCIA ONLINE ✦ </span>
+    <span>ESTRATEGIA ✦ CONTENIDO ✦ DISEÑO ✦ REDES ✦ ASESORÍA ✦ MENSAJE CLARO ✦ PRESENCIA ONLINE ✦ ESTRATEGIA ✦ CONTENIDO ✦ DISEÑO ✦ REDES ✦ ASESORÍA ✦ MENSAJE CLARO ✦ PRESENCIA ONLINE ✦ </span>
+  </div>
+</div>
+
+    <section class="intro section" id="nivel1">
       <div class="container split">
         <p class="eyebrow">Nivel 01 · El punto de partida</p>
         <div class="intro-copy reveal"><h2>No necesitas publicar más.<br>Necesitas saber <em>qué vale la pena decir.</em></h2><p>Tu trabajo tiene valor, pero cuando el mensaje no es claro, atraer clientes se vuelve más difícil de lo necesario. 1UP acompaña a emprendedores de servicios a ordenar su comunicación y mostrar su experiencia con seguridad.</p><a class="text-link" href="#metodo">Conoce el método VISIBLE <span>→</span></a></div>
@@ -76,6 +138,7 @@
 
     <section class="contact section" id="contacto"><div class="container contact-grid"><div class="contact-copy reveal"><p class="eyebrow light">Misión disponible</p><h2>¿Lista/o para que tu comunicación juegue a tu favor?</h2><p>Cuéntame qué estás construyendo y qué te gustaría mejorar. Te responderé con el siguiente paso más conveniente para tu marca.</p><div class="contact-badges"><span>✦ Respuesta personal</span><span>✦ Sin fórmulas genéricas</span></div></div>
       <form id="contact-form" class="contact-form reveal" novalidate><label>Nombre<input id="name" name="name" type="text" placeholder="¿Cómo te llamas?" required /></label><label>Email<input id="email" name="email" type="email" placeholder="tu@email.com" required /></label><label class="wide">Cuéntame en qué nivel estás<textarea id="message" name="message" placeholder="Qué haces, qué te gustaría mejorar y qué necesitas ahora..." required></textarea></label><button id="form-button" class="button primary" type="submit">Enviar mensaje <span>→</span></button><p id="form-status" class="form-status" aria-live="polite"></p></form>
+
     </div></section>
   </main>
   <footer><div class="container footer-row"><a class="logo" href="#inicio">1<span>UP</span></a><p>Comunicación para negocios con algo valioso que decir.</p><p>© <span id="year"></span> 1UP</p></div></footer>
