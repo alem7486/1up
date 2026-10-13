@@ -64,3 +64,6 @@ h1,h2,h3,p{margin-top:0}h1{max-width:790px;margin-bottom:25px;font-size:clamp(3.
   --hero-wheel: #fffdf8;
 }
 
+.accent2 {
+    color:#0c1233!important;
+  }
