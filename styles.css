@@ -59,11 +59,24 @@ h1,h2,h3,p{margin-top:0}h1{max-width:790px;margin-bottom:25px;font-size:clamp(3.
   --hero-eye: #111b45;
   --hero-shirt: #d7ef4a;
   --hero-pants: #2b3a8f;
-  --hero-shoes: #fffdf8;
-  --hero-deck: #a59ff5;
-  --hero-wheel: #fffdf8;
+  --hero-shoes: #BDB8FF;
+  --hero-deck: #6554C0;
+  --hero-wheel: #3B2314;
 }
 
 .accent2 {
     color:#0c1233!important;
   }
+
+  .logo img {
+  display: block;
+  height: 34px;
+  width: auto;
+  image-rendering: pixelated;
+}
+
+@media (max-width: 800px) {
+  .logo img {
+    height: 36px;
+  }
+}
