@@ -14,7 +14,7 @@
     if (!form.reportValidity()) return;
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.value)) {
       status.className = 'form-status error';
-      status.textContent = 'Por favor, escribe un correo válido.';
+      status.textContent = 'Por favor, escribí un correo válido.';
       email.focus(); return;
     }
     const original = button.innerHTML;
