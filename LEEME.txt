@@ -1,9 +1,0 @@
-BLOG 1UP — INSTALACIÓN
-Extrae los seis archivos HTML/CSS/JS junto a index.html, styles.css y logo1up.png.
-Reemplaza el blog.html, blog.css y blog.js anteriores.
-No reemplaces index.html, styles.css ni script.js.
-En index.html usa <a href="blog.html">Blog</a> (minúsculas).
-Abre index.html con Live Server y prueba los artículos.
-Las portadas son ilustraciones CSS, sin descargas externas.
-Los textos son borradores editables; revísalos antes de publicar.
-Para añadir artículos: duplica un blog-*.html, modifica título, descripción y contenido, y agrega una tarjeta en blog.html apuntando al nuevo archivo.
