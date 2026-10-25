@@ -42,7 +42,7 @@ if (!emailPattern.test(emailValue)) {
       form.reset();
       if (status) {
         status.className = "form-status success";
-        status.textContent = "¡Gracias por tu mensaje! Te responderé pronto.";
+        status.textContent = 'Gracias por tu mensaje, te responderemos lo antes posible.';
       }
       if (button) {
         button.disabled = false;
