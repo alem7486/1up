@@ -54,14 +54,14 @@ h1,h2,h3,p{margin-top:0}h1{max-width:790px;margin-bottom:25px;font-size:clamp(3.
 :root {
   --hero-cap: #ff674e;
   --hero-brim: #c9402b;
-  --hero-hair: #3b2314;
+  --hero-hair: #875B3F;
   --hero-skin: #f6c9a0;
-  --hero-eye: #111b45;
+  
   --hero-shirt: #d7ef4a;
   --hero-pants: #2b3a8f;
   --hero-shoes: #BDB8FF;
   --hero-deck: #6554C0;
-  --hero-wheel: #3B2314;
+  --hero-wheel: #875B3F;
 }
 
 .accent2 {
@@ -70,7 +70,7 @@ h1,h2,h3,p{margin-top:0}h1{max-width:790px;margin-bottom:25px;font-size:clamp(3.
 
   .logo img {
   display: block;
-  height: 34px;
+  height: 44px;
   width: auto;
   image-rendering: pixelated;
 }
