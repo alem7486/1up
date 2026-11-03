@@ -14,14 +14,14 @@
     if (!form.reportValidity()) return;
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.value)) {
       status.className = 'form-status error';
-      status.textContent = 'Por favor, escribí un correo válido.';
+      status.textContent = 'Please write a valid email address.';
       email.focus(); return;
     }
     const original = button.innerHTML;
     const params = new URLSearchParams(new FormData(form));
     params.set('lang', document.documentElement.lang || 'es');
     button.disabled = true;
-    button.textContent = 'Enviando...';
+    button.textContent = 'Sending...';
     status.className = 'form-status';
     status.textContent = '';
     try {
@@ -31,11 +31,11 @@
         body: params.toString()
       });
       status.className = 'form-status success';
-      status.textContent = 'Gracias por tu mensaje, te responderemos lo antes posible.';
+      status.textContent = 'Thank you for your message. We will get back to you as soon as possible.';
     } catch (error) {
       status.className = 'form-status error';
-      status.textContent = 'No se pudo enviar la solicitud. Conservamos tus datos en el formulario para que puedas reintentar.';
-      console.error('Formulario del blog:', error);
+      status.textContent = 'Sorry, we could not send your message. We will keep your data in the form so you can try again.';
+      console.error('Blog form:', error);
     } finally {
       button.disabled = false;
       button.innerHTML = original;
