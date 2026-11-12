@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>About | 1UP</title>
+
+  <meta
+    name="description"
+    content="Conocé la idea detrás de 1UP: ordenar ideas y comunicar lo que hacés de manera simple."
+  >
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link
+    href="https://fonts.gstatic.com"
+    rel="preconnect"
+    crossorigin
+  >
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Íconos del footer -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css"
+  >
+
+  <!-- Estilos compartidos -->
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="blog.css">
+</head>
+
+<body class="bp-page">
+
+  <!-- NAV -->
+  <header class="site-header">
+    <nav
+      class="nav container"
+      aria-label="Navegación principal"
+    >
+
+      <a
+        class="logo"
+        href="index.html#inicio"
+        aria-label="1UP, volver al inicio"
+      >
+        <img src="logo1up.png" alt="1UP">
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-controls="nav-menu"
+        aria-expanded="false"
+        aria-label="Abrir menú"
+      >
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-menu" id="nav-menu">
+        <a href="../index.html#quepasa">WHAT'S HAPPENING?</a>
+
+        <a href="../index.html#niveles">
+          WHAT LEVEL ARE YOU AT?
+        </a>
+
+         <a href="about-us.html">About Us</a>
+
+        <a class="nav-cta" href="index.html#contacto">
+          CONTACT<span aria-hidden="true">↗</span>
+        </a>
+
+        <a
+          class="lang-switch"
+          href="en/index.html"
+          lang="en"
+          hreflang="en"
+        >
+          EN
+        </a>
+      </div>
+
+    </nav>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main id="contenido">
+
+
+    <section
+      class="bp-article-head"
+      aria-labelledby="acerca-titulo"
+    >
+      <div class="container">
+        <p class="eyebrow light">¿Quiénes somos?  </p>
+
+        <h1 id="acerca-titulo">
+         What is <span class="accent1">1 UP</span>
+        </h1>
+
+        <p class="lead">
+          A simple idea: that communicating what you do doesn't have to be an impossible level.
+        </p>
+      </div>
+    </section>
+
+   
+    <section
+      class="acerca-content"
+      aria-label="La idea detrás de 1UP"
+    >
+      <div class="container">
+        <div class="bp-prose acerca-prose">
+
+          <p>1UP was created to support those who have something valuable to offer but don’t always know how to convey it. Because knowing your work doesn’t mean it’s easy to explain it on a website, in a publication, or in a conversation with a potential client.</p>
+
+            <p>I'm <a href="https://www.linkedin.com/in/alejandramerlo/" target="_blank" rel="noopener noreferrer" style="text-decoration: underline;">Alejandra Merlo</a>and I have nearly 15 years of experience in marketing, communications, and design. During that time, I worked for companies and organizations. Over a year ago, due to life circumstances, I embarked on my independent journey, helping brands and entrepreneurs communicate their value more clearly and effectively. From content creation to teaching and digital marketing work, I found myself collaborating on a project for entrepreneurs that led me to take the plunge and build my own brand.</p>
+
+            <p>While I use AI responsibly, my brain is still in charge when it comes to creating ideas and solutions that are authentic and useful. For example, all the text you see on this website was written by me. And that’s how I’ll help you grow your brand without having to rely 100% on AI.</p>
+
+          <p>I invite you to take another shot at the game and level up your communication. <a href="/index.html#contacto" style="text-decoration: underline;">Write to me!</a></p>
+
+          <p>
+      P.S.: Yes, I wrote “WE” because I have collaborators if your brand needs something more specific, such as social media management, paid media, or graphic design.</p>
+          <br>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-row">
+
+      <a
+        class="logo"
+        href="index.html#inicio"
+        aria-label="1UP, volver al inicio"
+      >
+        <img src="logo2.png" alt="1UP">
+      </a>
+
+      <p class="footer-description">
+        Communication for businesses with something valuable to say.
+      </p>
+
+      <div
+        class="footer-socials"
+        role="group"
+        aria-label="Redes sociales"
+      >
+        <a
+          href="https://www.facebook.com/1up.marketing/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook de 1UP"
+        >
+          <i class="bi bi-facebook" aria-hidden="true"></i>
+        </a>
+
+      <a href="https://www.instagram.com/TU_USUARIO/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de 1UP">
+          <i class="bi bi-instagram" aria-hidden="true"></i>
+        </a>
+        <a
+          href="https://www.linkedin.com/company/1upar/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn de 1UP"
+        >
+          <i class="bi bi-linkedin" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <p class="footer-legal">
+        1UP® is a registered trademark ·
+        <span id="year"></span>
+      </p>
+
+    </div>
+  </footer>
+
+  <!-- Menú móvil y año del footer, sin loader -->
+  <script>
+    const menuButton = document.querySelector(".menu-toggle");
+    const navMenu = document.querySelector("#nav-menu");
+
+    function closeMenu() {
+      navMenu.classList.remove("open");
+      menuButton.setAttribute("aria-expanded", "false");
+      menuButton.setAttribute("aria-label", "Abrir menú");
+    }
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = navMenu.classList.toggle("open");
+
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuButton.setAttribute(
+        "aria-label",
+        isOpen ? "Cerrar menú" : "Abrir menú"
+      );
+    });
+
+    navMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        const wasOpen = navMenu.classList.contains("open");
+        closeMenu();
+
+        if (wasOpen) {
+          menuButton.focus();
+        }
+      }
+    });
+
+    document.querySelector("#year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>

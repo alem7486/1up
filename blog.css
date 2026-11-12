@@ -12,3 +12,114 @@
 @media(max-width:800px){.bp-page{padding-top:70px}.bp-hero,.bp-article-head{padding-top:55px}.bp-list-heading{display:block}}
 @media(max-width:600px){.bp-grid,.bp-related .bp-grid{grid-template-columns:1fr}.bp-card-body{padding:23px}.bp-prose{font-size:1.02rem}.bp-list,.bp-related{padding-top:45px;padding-bottom:55px}}
 @media(prefers-reduced-motion:reduce){.bp-card{transition:none}.bp-card:hover{transform:none}}
+
+.bp-article-wrap > .bp-cover-image {
+  display: block;
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.bp-cover {
+  background-size: cover;
+  transition: background-size 0.4s ease;
+}
+
+.bp-card:hover .bp-cover {
+  background-size: 115%;
+}
+
+/* FOOTER DEL BLOG */
+/* FOOTER DE LAS PÁGINAS DEL BLOG */
+.bp-page .site-footer .footer-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: 24px;
+  box-sizing: border-box;
+}
+
+.bp-page .site-footer .logo {
+  flex: 0 0 auto;
+  margin: 0;
+}
+
+.bp-page .site-footer .footer-description {
+  flex: 1;
+  max-width: 300px;
+  margin: 0;
+}
+
+.bp-page .site-footer .footer-socials {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+
+  flex: 0 0 auto;
+  margin: 0;
+}
+
+.bp-page .site-footer .footer-socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.bp-page .site-footer .footer-legal {
+  flex: 0 1 220px;
+  max-width: 220px;
+  margin: 0;
+  text-align: right;
+}
+
+/* Celulares y pantallas angostas */
+@media (max-width: 800px) {
+  .bp-page .site-footer .footer-row {
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+    text-align: center;
+  }
+
+  .bp-page .site-footer .footer-description,
+  .bp-page .site-footer .footer-legal {
+    flex: 0 1 auto;
+    max-width: 320px;
+    text-align: center;
+  }
+}
+
+/* Textos del footer en una línea, en escritorio */
+@media (min-width: 1001px) {
+  .bp-page .site-footer .footer-description,
+  .bp-page .site-footer .footer-legal {
+    flex: 0 0 auto;
+    max-width: none;
+    white-space: nowrap;
+  }
+}
+
+/* En pantallas medianas y celulares, permitir saltos */
+@media (max-width: 1000px) {
+  .bp-page .site-footer .footer-row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .bp-page .site-footer .footer-description,
+  .bp-page .site-footer .footer-legal {
+    white-space: normal;
+    text-align: center;
+  }
+}
