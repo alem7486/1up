@@ -17,7 +17,7 @@ const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 if (!emailPattern.test(emailValue)) {
   status.className = "form-status error";
-  status.textContent = "Por favor, escribe un correo válido, por ejemplo nombre@dominio.com";
+  status.textContent = "Por favor, escribí un correo válido, por ejemplo nombre@dominio.com";
   if (emailField) emailField.focus();
   return;
 }
@@ -135,3 +135,24 @@ function updateScrollProgress() {
 window.addEventListener("scroll", updateScrollProgress, { passive: true });
 window.addEventListener("resize", updateScrollProgress);
 updateScrollProgress();
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const btn =
+    document.getElementById("showMoreBtn");
+
+  if (!btn) return;
+
+  btn.addEventListener("click", () => {
+
+    document
+      .querySelectorAll(".hidden-post")
+      .forEach(post => {
+        post.style.display = "block";
+      });
+
+    btn.style.display = "none";
+
+  });
+
+});
